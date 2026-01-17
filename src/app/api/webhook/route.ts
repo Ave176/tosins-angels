@@ -24,6 +24,10 @@ export async function POST(request: NextRequest) {
 
   if (event.type === "checkout.session.completed") {
     const session = event.data.object as Stripe.Checkout.Session;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const sessionData = session as any;
+    const shippingDetails = sessionData.shipping_details || sessionData.collected_information?.shipping_details;
+    const customerDetails = session.customer_details;
 
     try {
       // Get line items from the session
@@ -31,7 +35,7 @@ export async function POST(request: NextRequest) {
 
       // Create order in database
       const order = await createOrder({
-        email: session.customer_details?.email || "",
+        email: customerDetails?.email || "",
         stripe_session_id: session.id,
         status: "paid",
         total: (session.amount_total || 0) / 100,
@@ -43,20 +47,20 @@ export async function POST(request: NextRequest) {
           image: "",
         })),
         shipping_address: {
-          name: session.shipping_details?.name || session.customer_details?.name || "",
-          line1: session.shipping_details?.address?.line1 || "",
-          line2: session.shipping_details?.address?.line2 || undefined,
-          city: session.shipping_details?.address?.city || "",
-          state: session.shipping_details?.address?.state || "",
-          postal_code: session.shipping_details?.address?.postal_code || "",
-          country: session.shipping_details?.address?.country || "",
+          name: shippingDetails?.name || customerDetails?.name || "",
+          line1: shippingDetails?.address?.line1 || customerDetails?.address?.line1 || "",
+          line2: shippingDetails?.address?.line2 || customerDetails?.address?.line2 || undefined,
+          city: shippingDetails?.address?.city || customerDetails?.address?.city || "",
+          state: shippingDetails?.address?.state || customerDetails?.address?.state || "",
+          postal_code: shippingDetails?.address?.postal_code || customerDetails?.address?.postal_code || "",
+          country: shippingDetails?.address?.country || customerDetails?.address?.country || "",
         },
       });
 
       // Send confirmation email
-      if (session.customer_details?.email) {
+      if (customerDetails?.email) {
         await sendOrderConfirmation({
-          to: session.customer_details.email,
+          to: customerDetails.email,
           orderNumber: order.id,
           items: lineItems.data.map((item) => ({
             name: item.description || "",
@@ -65,12 +69,12 @@ export async function POST(request: NextRequest) {
           })),
           total: (session.amount_total || 0) / 100,
           shippingAddress: {
-            name: session.shipping_details?.name || session.customer_details?.name || "",
-            line1: session.shipping_details?.address?.line1 || "",
-            city: session.shipping_details?.address?.city || "",
-            state: session.shipping_details?.address?.state || "",
-            postal_code: session.shipping_details?.address?.postal_code || "",
-            country: session.shipping_details?.address?.country || "",
+            name: shippingDetails?.name || customerDetails?.name || "",
+            line1: shippingDetails?.address?.line1 || customerDetails?.address?.line1 || "",
+            city: shippingDetails?.address?.city || customerDetails?.address?.city || "",
+            state: shippingDetails?.address?.state || customerDetails?.address?.state || "",
+            postal_code: shippingDetails?.address?.postal_code || customerDetails?.address?.postal_code || "",
+            country: shippingDetails?.address?.country || customerDetails?.address?.country || "",
           },
         });
       }
