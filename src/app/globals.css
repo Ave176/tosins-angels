@@ -1,26 +1,94 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fdfbf7;
+  --foreground: #1a1a1a;
+  --gold: #d4af37;
+  --gold-light: #f4e4bc;
+  --gold-dark: #b8960c;
+  --cream: #faf7f2;
+  --charcoal: #2d2d2d;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-cream: var(--cream);
+  --color-charcoal: var(--charcoal);
+  --font-sans: var(--font-playfair);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 50%, #d4af37 100%);
+  color: #1a1a1a;
+  padding: 0.75rem 2rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid #d4af37;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #b8960c 0%, #d4af37 50%, #b8960c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #d4af37;
+  padding: 0.75rem 2rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid #d4af37;
+}
+
+.btn-secondary:hover {
+  background: #d4af37;
+  color: #1a1a1a;
+}
+
+.gold-text {
+  background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 50%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #faf7f2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b8960c;
 }
