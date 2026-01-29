@@ -35,12 +35,6 @@ export default function Navbar() {
               Collections
             </Link>
             <Link
-              href="/products?category=Rings"
-              className="text-charcoal hover:text-gold transition-colors font-medium"
-            >
-              Rings
-            </Link>
-            <Link
               href="/products?category=Necklaces"
               className="text-charcoal hover:text-gold transition-colors font-medium"
             >
@@ -51,6 +45,12 @@ export default function Navbar() {
               className="text-charcoal hover:text-gold transition-colors font-medium"
             >
               Earrings
+            </Link>
+            <Link
+              href="/about"
+              className="text-charcoal hover:text-gold transition-colors font-medium"
+            >
+              About
             </Link>
           </div>
 
@@ -154,13 +154,6 @@ export default function Navbar() {
                 Collections
               </Link>
               <Link
-                href="/products?category=Rings"
-                className="text-charcoal hover:text-gold transition-colors font-medium"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Rings
-              </Link>
-              <Link
                 href="/products?category=Necklaces"
                 className="text-charcoal hover:text-gold transition-colors font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -173,6 +166,13 @@ export default function Navbar() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Earrings
+              </Link>
+              <Link
+                href="/about"
+                className="text-charcoal hover:text-gold transition-colors font-medium"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About
               </Link>
             </div>
           </div>

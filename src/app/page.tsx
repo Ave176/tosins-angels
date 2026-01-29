@@ -10,38 +10,31 @@ export default function Home() {
     <div>
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1920&h=1080&fit=crop"
-            alt="Luxury jewelry"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+        {/* Background */}
+        <div className="absolute inset-0 bg-charcoal">
+          <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/95 to-charcoal/80" />
         </div>
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
           <div className="max-w-2xl">
             <p className="text-gold text-sm uppercase tracking-[0.3em] mb-4">
-              Handcrafted Excellence
+              Handcrafted with Love
             </p>
             <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight">
-              Timeless Beauty,{" "}
-              <span className="gold-text">Eternal Elegance</span>
+              Beautiful Jewelry,{" "}
+              <span className="gold-text">Affordable Elegance</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-lg">
-              Discover our collection of exquisite jewelry pieces, each crafted
-              with passion and designed to celebrate life&apos;s most precious moments.
+              Discover our collection of charming jewelry pieces, each designed
+              to bring a little sparkle to your everyday life.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/products" className="btn-primary">
                 Explore Collection
               </Link>
-              <Link href="/products?category=Rings" className="btn-secondary">
-                Shop Rings
+              <Link href="/about" className="btn-secondary">
+                Our Story
               </Link>
             </div>
           </div>
@@ -77,7 +70,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
             {categories.slice(1).map((category) => (
               <Link
                 key={category}
@@ -210,6 +203,28 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Mission Statement Section */}
+      <section className="py-20 bg-cream">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-gold text-sm uppercase tracking-[0.2em] mb-2">
+            Our Mission
+          </p>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-charcoal mb-6">
+            Sparkle Without the Splurge
+          </h2>
+          <p className="text-lg text-gray-600 leading-relaxed mb-8">
+            At Tosin&apos;s Angels, we believe everyone deserves to feel special.
+            Our mission is to bring joy through beautiful, affordable jewelry
+            that you can wear every day and gift with pride. Every piece in our
+            collection is chosen with care, so you never have to choose between
+            style and your budget.
+          </p>
+          <Link href="/about" className="btn-secondary">
+            Learn More About Us
+          </Link>
+        </div>
+      </section>
+
       {/* Newsletter Section */}
       <section className="py-20 bg-gold-light">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -238,14 +253,8 @@ export default function Home() {
 
 function getCategoryImage(category: string): string {
   const images: Record<string, string> = {
-    Necklaces:
-      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&h=500&fit=crop",
-    Earrings:
-      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&h=500&fit=crop",
-    Rings:
-      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&h=500&fit=crop",
-    Bracelets:
-      "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&h=500&fit=crop",
+    Necklaces: "/images/products/rainbow-cross-necklace.jpg",
+    Earrings: "/images/products/crystal-bear-set.jpg",
   };
   return images[category] || images.Necklaces;
 }
