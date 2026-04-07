@@ -253,8 +253,8 @@ export default function Home() {
 
 function getCategoryImage(category: string): string {
   const images: Record<string, string> = {
-    Necklaces: "/images/products/rainbow-cross-necklace.jpg",
-    Earrings: "/images/products/crystal-bear-set.jpg",
+    Necklaces: "/images/products/rainbow-cross-necklace.png",
+    Earrings: "/images/products/crystal-bear-set.png",
   };
   return images[category] || images.Necklaces;
 }

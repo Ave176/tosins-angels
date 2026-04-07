@@ -23,9 +23,9 @@ export const products: Product[] = [
     description: "Gold-tone bear pendant necklace with matching crystal stud earrings",
     longDescription: "This charming jewelry set features a gold-tone bear pendant adorned with sparkling cubic zirconia stones on a delicate twisted chain, paired with matching bear stud earrings. The playful bear motif captures the spirit of Tosin's Angels, making it a perfect gift or everyday accessory. Each piece is carefully crafted for lasting shine and comfort.",
     category: "Necklaces",
-    image: "/images/products/gold-bear-set.jpg",
+    image: "/images/products/gold-bear-set.png",
     images: [
-      "/images/products/gold-bear-set.jpg"
+      "/images/products/gold-bear-set.png"
     ],
     inStock: true,
     featured: true,
@@ -40,9 +40,10 @@ export const products: Product[] = [
     description: "Gold-tone cross pendant with multicolored gemstone accents",
     longDescription: "A beautiful gold-tone cross pendant featuring vibrant multicolored baguette-cut stones arranged in a striking rainbow pattern. Suspended from a fine box chain, this necklace blends faith and fashion effortlessly. The rich jewel tones catch the light beautifully, making it a standout piece for any occasion.",
     category: "Necklaces",
-    image: "/images/products/rainbow-cross-necklace.jpg",
+    image: "/images/products/rainbow-cross-necklace.png",
     images: [
-      "/images/products/rainbow-cross-necklace.jpg"
+      "/images/products/rainbow-cross-necklace.png",
+      "/images/products/rainbow-cross-necklace-2.png"
     ],
     inStock: true,
     featured: true,
@@ -57,9 +58,9 @@ export const products: Product[] = [
     description: "Silver-tone bear pendant necklace with matching bear stud earrings",
     longDescription: "Our signature angel bear design in polished silver tone, this set includes a bear pendant on a fine snake chain and coordinating bear stud earrings with crystal accents. The smooth, rounded bear silhouette has a modern, minimalist feel while still being playful and eye-catching. A customer favourite and a staple of the Tosin's Angels collection.",
     category: "Necklaces",
-    image: "/images/products/silver-bear-set.jpg",
+    image: "/images/products/silver-bear-set.png",
     images: [
-      "/images/products/silver-bear-set.jpg"
+      "/images/products/silver-bear-set.png"
     ],
     inStock: true,
     featured: true,
@@ -74,9 +75,9 @@ export const products: Product[] = [
     description: "Silver-tone bear pendant with matching crystal dangle earrings",
     longDescription: "This elegant set pairs a crystal-embellished bear pendant necklace with dainty dangle earrings on a twisted rope chain. The silver-tone finish and faceted crystals give the bear motif a more refined, sophisticated look. The hook earrings provide comfortable wear and graceful movement. Perfect for those who love a touch of sparkle.",
     category: "Earrings",
-    image: "/images/products/crystal-bear-set.jpg",
+    image: "/images/products/crystal-bear-set.png",
     images: [
-      "/images/products/crystal-bear-set.jpg"
+      "/images/products/crystal-bear-set.png"
     ],
     inStock: true,
     featured: true,
@@ -91,9 +92,9 @@ export const products: Product[] = [
     description: "Adorable miniature teddy bear stud earrings",
     longDescription: "These irresistibly cute miniature teddy bear studs are the perfect finishing touch for any outfit. Each tiny bear is detailed with a sweet face and a delicate bow, sitting comfortably on secure stud backs. Lightweight and fun, they are ideal for everyday wear or as a thoughtful gift for someone special. A beloved entry-level piece from Tosin's Angels.",
     category: "Earrings",
-    image: "/images/products/mini-bear-studs.jpg",
+    image: "/images/products/mini-bear-studs.png",
     images: [
-      "/images/products/mini-bear-studs.jpg"
+      "/images/products/mini-bear-studs.png"
     ],
     inStock: true,
     featured: false,
